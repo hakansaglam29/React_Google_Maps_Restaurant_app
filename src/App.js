@@ -1,11 +1,11 @@
 import React from 'react';
-import {Restaurant} from './components/Map'
+import {Restaurant} from './components/Map';
 
 function App() {
 
   return (
-    <div>
-      <Restaurant/>
+    <div style={{flex:1}}>
+      <Restaurant style={{flex:1}}/>
     </div>
   );
 }

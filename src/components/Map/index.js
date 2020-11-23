@@ -3,6 +3,8 @@ import {GoogleMap, withScriptjs, withGoogleMap, Marker,} from "react-google-maps
 import axios from'axios';
 import mapStyle from './mapStyle'
 
+import {City} from '../City'
+
 function Map() {
   const [RestaurantData, setRestaurantData] = useState(null)
   // const [selectedPark, setSelectedPark] = useState(null)
@@ -20,7 +22,7 @@ function Map() {
 
 
   return(
-    <GoogleMap 
+    <GoogleMap
     defaultCenter={{lat:41.878113, lng:-87.629799}} 
     defaultZoom={5}
     defaultOptions={{styles:mapStyle}}>
@@ -50,6 +52,8 @@ export function Restaurant(props) {
 
 
   return (
+    <>
+    <City/>
     <div style={{width:"100vw", height:"100vh"}} >
       <WrappedMap  
      googleMapURL={`https://maps.googleapis.com/maps/api/js?v=3.exp&libraries=geometry,drawing,places&key=${process.env.REACT_APP_GOOGLE_KEY}`}
@@ -57,5 +61,6 @@ export function Restaurant(props) {
      containerElement={<div style={{ height: `100%` }} />}
      mapElement={<div style={{ height: `100%` }} />} />
     </div>
+    </>
   );
 }
